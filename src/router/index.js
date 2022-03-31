@@ -17,16 +17,14 @@ export default new Router({
     },
     { path: '/',
       name: 'Default',
-      redirect: '/login',
+      redirect: '/show',
      },
       {
       path: '/home',
       name: 'Home',
       component: Home,
       redirect: '/show',
-      children: [
-
-        {
+      children: [{
           path:'/upload',
           name:'upload',
           component:()=>import('../components/upload/upload'),
@@ -41,9 +39,14 @@ export default new Router({
           meta: {
             requireAuth: true
           },
-
-
-       }
+        } ,{
+          path:'/atom',
+          name:'show_atom',
+          component:()=>import('../components/atom/show_atom'),
+          meta: {
+            requireAuth: true
+          },
+        }
       ]
     }
   ]

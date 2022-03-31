@@ -28,6 +28,7 @@ import Head from "../common/Head"
         navList: [
           {name: '/show', navItem: '产品管理'},
           {name: '/upload', navItem: '发布管理'},
+          {name: '/atom', navItem: '原子服务展示'},
         ],
         keywords: ''
       }

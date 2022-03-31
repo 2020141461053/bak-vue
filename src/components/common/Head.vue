@@ -1,6 +1,6 @@
 <template>
   <el-card class="admin-header">
-    <a href="/index">
+    <a href="/show">
       <img src="../../assets/logo.png" alt="" width="90px" style="float: left;margin-top: -27px;margin-left: -10px">
     </a>
     <span style="font-size: 30px;font-weight: bold;position:absolute;left: 150px;color: #070000">    三湘银行</span>

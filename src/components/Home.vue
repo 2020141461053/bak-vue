@@ -24,9 +24,10 @@ export default {
       this.$axios.get('/admin/logout', {headers: {Authorization: " Bearer " + this.$store.state.token}})
         .then(rep => {
           alert("已退出登录")
-          this.$router.replace({path:'/login'})
+
         })
         .catch()
+      this.$router.replace({path:'/login'})
     }
   }
 }

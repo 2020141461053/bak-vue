@@ -89,13 +89,16 @@ export default {
         .then(rep=>{
           if(rep.data.code==="200") {
             alert(" 提交成功")
-            this.$refs.step1.form = []
-            this.$refs.step2.list = []
+
+
           }
           else{
-           alert(rep.data.msg)
-          }
+           alert(rep.data.code)
 
+          }
+          this.$refs.step1.form = []
+          this.$refs.step2.list = []
+          this.$router.replace({path:'/show'})
         })
 
 },

@@ -23,9 +23,10 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
-router.beforeEach((to, from, next) => {
-    if (to.meta.requireAuth) {
-      if (store.state.token) {
+router.beforeEach(
+  (to, from, next) => {
+  if (to.meta.requireAuth) {
+      if (store.state.token!=undefined) {
         next()
       } else {
         next({
@@ -39,4 +40,5 @@ router.beforeEach((to, from, next) => {
     }
   }
 )
+
 
