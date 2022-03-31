@@ -161,7 +161,7 @@ export default {
         "services":this.list
       },{headers:{Authorization:" Bearer "+this.$store.state.token}})
         .then(rep=>{
-
+          alert(rep.data.msg)
 
         })
     }
