@@ -1,6 +1,6 @@
 <template>
 <div>
-
+<el-card>
   <el-collapse v-model="activeName" accordion>
     <el-collapse-item v-for="atom in atoms" :key="atom.id" :title="atom.name">
       <label>{{atom.detail}}</label>
@@ -20,6 +20,7 @@
     </el-collapse-item>
 
   </el-collapse>
+</el-card>
 <br><br><el-card >
   <p>原子服务排序</p>
   <br><br>
@@ -161,12 +162,13 @@ export default {
         "services":this.list
       },{headers:{Authorization:" Bearer "+this.$store.state.token}})
         .then(rep=>{
-          alert(rep.data.msg)
-
+          if(rep.data.msg==='ok')
+          alert('提交成功')
+          else alert("出错了")
         })
     }
   },
-  mounted() {
+ created() {
     this.get()
   }
 }

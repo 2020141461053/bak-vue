@@ -118,13 +118,10 @@
         </el-table-column>
 
         <el-table-column
-          prop="available"
+          prop="buy"
           label="是否可买"
           sortable
           fit>
-          <template slot-scope="scope">
-<el-switch v-model="scope.row.available" disabled></el-switch>
-          </template>
         </el-table-column>
         <el-table-column
           label="操作"
@@ -187,7 +184,7 @@ export default {
       edit: true
     }
   },
-  mounted () {
+ created () {
     this.listProduct()
     if(this.$store.state.identity=="sup")
       this.edit=false
@@ -218,6 +215,12 @@ export default {
         if (rep && rep.data.code === 200) {
 
           let production = rep.data.data
+          for(let i=0;i<production.length;i++){
+            if(production[i].available)
+            this.$set(production[i],'buy','是')
+            else  this.$set(production[i],'buy','否')
+          }
+          console.log(production)
           this.production=production
 
         }
