@@ -17,7 +17,7 @@ export default new Router({
     },
     { path: '/',
       name: 'Default',
-      redirect: '/show',
+      redirect: '/login',
      },
       {
       path: '/home',

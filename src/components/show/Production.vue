@@ -199,7 +199,9 @@ export default {
       this.AtomVisible=true
 
       this.selectedProduction =production,
-      this.$refs.atom.load()
+        setTimeout(() => {
+          this.$refs.atom.load()
+        },100)
     },
     handleClose(done) {
       this.$confirm('还有未保存的工作哦确定关闭吗？')

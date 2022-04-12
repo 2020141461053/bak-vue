@@ -4,6 +4,7 @@
   <el-collapse v-model="activeName" accordion>
     <el-collapse-item v-for="atom in atoms" :key="atom.id" :title="atom.name">
       <label>{{atom.detail}}</label>
+      <br>   <br>
       <el-switch
         style="display: block"
         v-model="atom.choice"
@@ -14,6 +15,7 @@
         @change='changeStatus(atom)'
       >
       </el-switch>
+      <br>
       <el-checkbox-group v-model="atom.allow" @change="change(atom)" >
         <el-checkbox-button v-for="element in atom.params.constraints" :label="element" :key="element" >{{element}}</el-checkbox-button>
       </el-checkbox-group>
