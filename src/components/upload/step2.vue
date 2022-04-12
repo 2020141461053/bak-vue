@@ -113,7 +113,8 @@ export default {
           console.log(this.atoms)
         })
         .catch(rep=>{
-          console.log("ERROR=:"+rep.response)
+         alert("请重新登录")
+         this.$router.replace({path:'/login'})
         })
           console.log(" get() over")
 

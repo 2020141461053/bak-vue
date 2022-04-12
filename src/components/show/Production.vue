@@ -167,12 +167,12 @@
 
 <script>
 
-import Step2 from "../upload/step2";
+
 import Atoms from "./atoms";
 
 export default {
   name: "Production",
-  components: {Atoms, Step2,},
+  components: {Atoms},
   data(){
     return{
       production:[],
