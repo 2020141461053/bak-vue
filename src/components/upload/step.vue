@@ -6,7 +6,7 @@
       style="text-align: left"
     >
 
-      <el-steps  :active="1"  >
+      <el-steps  >
         <el-step  v-for="atom in this.atom" :key="atom"  :title=atom.name> </el-step>
       </el-steps>
 
@@ -88,7 +88,7 @@ export default {
       },{headers:{Authorization:" Bearer "+this.$store.state.token}})
         .then(rep=>{
           if(rep.data.code===200) {
-            alert(" 提交成功")
+            alert(" 创建成功")
 
 
           }
@@ -100,6 +100,9 @@ export default {
           this.$refs.step2.list = []
           this.$router.replace({path:'/show'})
         })
+      .catch(rep=>{alert("出错了")
+        this.$router.replace({path:'/login'})
+      })
 
 },
     sure(){
