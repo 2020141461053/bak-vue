@@ -221,6 +221,10 @@ export default {
             if(production[i].available)
             this.$set(production[i],'buy','是')
             else  this.$set(production[i],'buy','否')
+           let annualRate= production[i].annualRate
+            let rate=parseFloat(annualRate)/100
+            production[i].annualRate=rate+'%'
+
           }
           console.log(production)
           this.production=production
