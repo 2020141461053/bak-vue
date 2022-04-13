@@ -47,7 +47,7 @@ export default {
 
       },
       rules: {
-        name: [{required: true, message: '用户名不能为空', trigger: 'blur'}],
+        name: [{required: true, message: '产品名不能为空', trigger: 'blur'}],
         period: [{required: true, message: '可存天数为整数', trigger: 'blur',pattern:/^[1-9]\d*$/}],
         annualRate: [{required: true, message: '年利率不为空', trigger: 'blur'}],
         minAmount: [{required: true, message: '最小存款金额为整数', trigger: 'blur',pattern:/^[1-9]\d*$/}],

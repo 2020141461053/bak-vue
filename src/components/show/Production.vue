@@ -131,7 +131,7 @@
               @click="editProduction(scope.row)"
               type="text"
               size="small">
-              编辑
+              修改属性
             </el-button>
             <el-button
               type="text"
@@ -143,7 +143,7 @@
               type="text"
               size="small"
               @click="atom(scope.row)">
-              原子信息
+              修改原子服务
             </el-button>
           </template>
         </el-table-column>
@@ -267,6 +267,7 @@ export default {
           this.dialogFormVisible=false
           this.listProduct()
           alert(" 修改成功")
+          location. reload ()
         })
         .catch(_ => {});
 

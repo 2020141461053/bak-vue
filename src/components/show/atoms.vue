@@ -164,8 +164,10 @@ export default {
         "services":this.list
       },{headers:{Authorization:" Bearer "+this.$store.state.token}})
         .then(rep=>{
-          if(rep.data.msg==='ok')
-          alert('提交成功')
+          if(rep.data.msg==='ok') {
+            alert('提交成功')
+            location. reload ()
+          }
           else alert("出错了")
         })
     }

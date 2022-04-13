@@ -10,7 +10,7 @@
         <el-step  v-for="atom in this.atom" :key="atom"  :title=atom.name> </el-step>
       </el-steps>
 
-      <div  class="dialog-footer"  style="text-align: right">
+      <div  class="dialog-footer"  style="text-align: right ;margin-right: 150px">
         <el-button @click="atomVisible = false">取 消</el-button>
         <el-button type="primary" @click="submit()">确定创建</el-button>
       </div>
@@ -87,13 +87,13 @@ export default {
         "services":this.atom
       },{headers:{Authorization:" Bearer "+this.$store.state.token}})
         .then(rep=>{
-          if(rep.data.code==="200") {
+          if(rep.data.code===200) {
             alert(" 提交成功")
 
 
           }
           else{
-           alert(rep.data.code)
+           alert(rep.data.msg)
 
           }
           this.$refs.step1.form = []
